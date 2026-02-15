@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Ti Mi Amor ❤️</title>
+
+<style>
+body{
+    margin:0;
+    background: linear-gradient(135deg, #0b0c10, #1f2833);
+    color:white;
+    font-family: 'Segoe UI', sans-serif;
+    text-align:center;
+    overflow:hidden;
+}
+
+.container{
+    margin-top:50px;
+}
+
+img{
+    width:250px;
+    height:250px;
+    border-radius:20px;
+    box-shadow:0 0 30px #ff4d6d;
+    animation:latido 1.5s infinite;
+}
+
+@keyframes latido{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+    100%{transform:scale(1);}
+}
+
+h1{
+    margin-top:20px;
+    color:#ff4d6d;
+}
+
+.corazon{
+    position:absolute;
+    color:#ff4d6d;
+    animation:caer linear infinite;
+}
+
+@keyframes caer{
+    from{
+        transform:translateY(-100px);
+    }
+    to{
+        transform:translateY(100vh);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+<img src="vane.gif">
+<h1>Feliz San Valentín ❤️</h1>
+<h2>Para la mujer más hermosa del mundo</h2>
+<h3>Te amo con todo mi corazón 💕</h3>
+<h4>Con amor, Manuel</h4>
+</div>
+
+<script>
+function crearCorazon(){
+    const corazon = document.createElement("div");
+    corazon.innerHTML = "❤️";
+    corazon.className = "corazon";
+    corazon.style.left = Math.random()*100+"vw";
+    corazon.style.animationDuration = (Math.random()*3+2)+"s";
+    document.body.appendChild(corazon);
+
+    setTimeout(()=>{
+        corazon.remove();
+    },5000);
+}
+
+setInterval(crearCorazon,300);
+</script>
+
+</body>
+</html>
