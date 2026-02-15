@@ -15,7 +15,9 @@ body{
 }
 
 .container{
-    margin-top:50px;
+    margin-top:30px;
+    opacity:0;
+    transition:1s;
 }
 
 img{
@@ -37,6 +39,22 @@ h1{
     color:#ff4d6d;
 }
 
+button{
+    margin-top:200px;
+    padding:20px 40px;
+    font-size:20px;
+    background:#ff4d6d;
+    color:white;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+    box-shadow:0 0 20px #ff4d6d;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
 .corazon{
     position:absolute;
     color:#ff4d6d;
@@ -56,11 +74,16 @@ h1{
 
 <body>
 
-<audio autoplay loop>
+<!-- MUSICA -->
+<audio id="musica" loop>
 <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
-<div class="container">
+<!-- BOTON -->
+<button onclick="iniciar()">💌 Abrir mi carta 💌</button>
+
+<!-- CONTENIDO -->
+<div class="container" id="contenido">
 <img src="vane.gif">
 <h1>Feliz San Valentín ❤️</h1>
 <h2>Para la mujer más hermosa del mundo</h2>
@@ -69,6 +92,21 @@ h1{
 </div>
 
 <script>
+
+function iniciar(){
+
+    // reproducir musica
+    document.getElementById("musica").play();
+
+    // mostrar contenido
+    document.getElementById("contenido").style.opacity="1";
+
+    // ocultar boton
+    document.querySelector("button").style.display="none";
+
+}
+
+// corazones
 function crearCorazon(){
     const corazon = document.createElement("div");
     corazon.innerHTML = "❤️";
@@ -83,7 +121,9 @@ function crearCorazon(){
 }
 
 setInterval(crearCorazon,300);
+
 </script>
 
 </body>
 </html>
+
