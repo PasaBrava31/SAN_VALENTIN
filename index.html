@@ -75,9 +75,10 @@ button:hover{
 <body>
 
 <!-- MUSICA -->
-<audio id="musica" loop>
-<source src="musica.mp3" type="audio/mpeg">
+<audio id="musica" loop preload="auto">
+    <source src="música.mp3" type="audio/mpeg">
 </audio>
+
 
 <!-- BOTON -->
 <button onclick="iniciar()">💌 Abrir mi carta 💌</button>
@@ -126,6 +127,7 @@ setInterval(crearCorazon,300);
 
 </body>
 </html>
+
 
 
 
